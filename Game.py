@@ -53,22 +53,6 @@ class Sudoku:
             pygame.draw.rect(window, (255, 165, 0),
                              (self.pos_opt_x, self.pos_opt_y, (WIDTH - 20) / 9, (WIDTH - 20) / 9), 3)
 
-    ''' KANN GELÖSCHT WERDEN
-    def drawNumberGrey(self):
-        if active:
-            for i in range(81):
-                if field[i] != 0:
-                    self.text = self.font.render(str(field[i]), 1, (0, 0, 0))
-                    if i >= self.row:
-                        self.text_y += 60
-                        self.row += 9
-                    self.text_x += (i % 9) * 60
-                    window.blit(self.text, (self.text_x, self.text_y))
-            self.row = 0
-            self.text_x = 10
-            self.text_y = 10
-    KANN GELÖSCHT WERDEN   '''
-
     def logicPositionOptimized(self):
         for i in range(10):
             if 10 < position[0] < 10 + 60 * i:
@@ -106,19 +90,6 @@ class Number:
     def drawNumberGray(self):
         if not self.enter:
             window.blit(self.text_gray, (self.text_gray_x, self.text_gray_y))
-
-        '''if active:
-            for i in range(81):
-                if field[i] != 0:
-                    self.text = self.font.render(str(field[i]), 1, (0, 0, 0))
-                    if i >= self.row:
-                        self.text_y += 60
-                        self.row += 9
-                    self.text_x += (i % 9) * 60
-                    window.blit(self.text, (self.text_x, self.text_y))
-            self.row = 0
-            self.text_x = 10
-            self.text_y = 10 '''
 
     def drawNumberBlack(self):
         if self.enter:
@@ -159,12 +130,14 @@ def rules(field, test_number, row, column):
                 return False
     return True
 
+
 def find(field):
     for x in range(9):
         for y in range(9):
             if field[x][y] == 0:
                 return x, y
     return False
+
 
 def solve(field):
     found = find(field)
@@ -181,17 +154,6 @@ def solve(field):
             field[row][column] = 0
     return False
 
-""" Bedingungen siehe solveComplete
-        Vorgehen: Prüfe Zeile nach Nummer die eingegeben werden soll
-                    wenn bereits vorhanden...return False
-                  Prüfe Spalte nach Nummer die....
-                    wenn bereits vorhanden...return False
-                  Prüfe 3*3 (9er-)Quadrat....
-                    wenn bereits vorhanden...return False
-                  else:
-                    return True
-"""
-
 
 def redrawGameWindow():
     s.drawBackground()
@@ -202,7 +164,7 @@ def redrawGameWindow():
     for f in range(9):
         for i in range(9):
             if field[f][i] != 0:
-                Numbers[f*9 + i] = Number(10 + 60 * i, 10 + 60 * f, field[f][i], enter=True)
+                Numbers[f * 9 + i] = Number(10 + 60 * i, 10 + 60 * f, field[f][i], enter=True)
     for N in Numbers:
         if N != 0:
             N.drawNumberGray()
