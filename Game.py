@@ -1,5 +1,4 @@
 import pygame
-import random
 
 pygame.init()
 
@@ -13,7 +12,7 @@ run = True
 
 
 class Sudoku:
-    global WIDTH, HEIGHT, position, active, field  # should have made an variable SIDE = WIDTH - 20 ... but i didnt lol
+    global WIDTH, HEIGHT, position, active, field
     line_x = 10
     line_y = 10
 
@@ -122,8 +121,8 @@ def rules(field, test_number, row, column):
     x_end_inclusive = x_start + 2
     y_start = (column // 3) * 3
     y_end_inclusive = y_start + 2
-    for x in range(x_start, x_end_inclusive + 1):  # +1 weil range bis einen davor geht und die variable eigentlich
-        for y in range(y_start, y_end_inclusive + 1):  # schon die letzte zu prüfende position enthält
+    for x in range(x_start, x_end_inclusive + 1):
+        for y in range(y_start, y_end_inclusive + 1):
             if x == row and y == column:
                 continue
             if field[x][y] == test_number:
