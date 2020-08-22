@@ -1,6 +1,6 @@
 # This is the classic Sudoku game
 
-##How to play:
+## How to play:
 click on the field you want to place your number in \
 or move through the grid using the arrow keys \
 \
