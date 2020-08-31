@@ -3,7 +3,7 @@
 ## How to play:
 click on the field you want to place your number in \
 or move through the grid using the arrow keys \
-\
+
 type in your number: \
 grey --> stored for you and ready to be filled in by hitting enter \
 black --> number is filled in, hit backspace to delete\
