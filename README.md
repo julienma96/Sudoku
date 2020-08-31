@@ -9,7 +9,7 @@
 >black --> number is filled in, hit backspace to delete
 
 >use the sudoku solver:\
->hit spacebar and it will use backtracking to try to solve the sudoku grid\
+>hit spacebar and it will use backtracking to try to solve the sudoku grid
 
 maybe coming soon:\
 a timer, some sort of scoring, creating a random grid based on levels(easy, normal, hard)
